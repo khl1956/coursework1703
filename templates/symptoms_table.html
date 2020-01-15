@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">symptom_id</th>
+                <th scope="col">description</th>
+                <th scope="col">patient_id</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for symptom in symptoms %}
+            <tr >
+                <td> {{symptom.symptom_id}} </td>
+                <td> {{symptom.description}} </td>
+                <td> {{symptom.patient_id}} </td>
+                <td>
+                    <a href="/edit_symptom/{{symptom.symptom_id}}" type="button" class="btn btn-warning">Edit</a>
+                    <a href="/delete_symptom/{{symptom.symptom_id}}" type="button" class="btn btn-warning">Delete</a>
+                    <a href="/new_disease/{{symptom.symptom_id}}" type="button" class="btn btn-warning">Add disease</a>
+                    <a href="/show_disease/{{symptom.symptom_id}}" type="button" class="btn btn-warning">Show diseases</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+ </div>
+
+
+{% endblock %}

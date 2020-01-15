@@ -1,0 +1,7 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h3 class="mb-0">Вероятность наличия сердечной болезни: {{ prob }} %</h3>
+    <h3 class="mb-0">Вывод: {{ conclusion }}</h3>
+    <h3 class="mb-0">Номер кластера пациента: {{ predict }}</h3>
+{% endblock %}
