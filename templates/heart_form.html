@@ -1,0 +1,114 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<!--https://www.codeply.com/go/nhbdi2FkJm-->
+
+
+<div class="col-md-6 mx-auto">
+
+    <!-- form card login -->
+    <div class="card rounded-0">
+
+        <div class="card-header">
+            <h3 class="mb-0">{{form_name}}</h3>
+        </div>
+        <div class="card-body">
+
+            <form class="form" method="POST">
+                {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                {{ form.heart_id.label }}
+                {{ form.heart_id(class_="form-control") }}
+
+                {% if form.heart_id.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.heart_id.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+                                
+            <div class="form-group">
+                {{ form.age.label }}
+                {{ form.age(class_="form-control") }}
+
+                {% if form.age.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.age.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+
+             <div class="form-group">
+                {{ form.sex.label }}
+                {{ form.sex(class_="form-control") }}
+
+                {% if form.sex.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.sex.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+            <div class="form-group">
+                {{ form.trestbps.label }}
+                {{ form.trestbps(class_="form-control") }}
+
+                {% if form.trestbps.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.trestbps.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+            <div class="form-group">
+                {{ form.chol.label }}
+                {{ form.chol(class_="form-control") }}
+
+                {% if form.chol.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.chol.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+            <div class="form-group">
+                {{ form.thalach.label }}
+                {{ form.thalach(class_="form-control") }}
+
+                {% if form.thalach.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.thalach.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+                {{ form.submit(class_="btn btn-success") }}
+            </form>
+        </div>
+        <!--/card-block-->
+    </div>
+    <!-- /form card login -->
+
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

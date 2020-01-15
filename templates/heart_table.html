@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">heart_id</th>
+                <th scope="col">age</th>
+                <th scope="col">sex</th>
+                <th scope="col">trestbps</th>
+                <th scope="col">chol</th>
+                <th scope="col">thalach</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for heart in hearts %}
+            <tr >
+                <td> {{heart.heart_id}} </td>
+                <td> {{heart.age}} </td>
+                <td> {{heart.sex}} </td>
+                <td> {{heart.trestbps}} </td>
+                <td> {{heart.chol}} </td>
+                <td> {{heart.thalach}} </td>
+                <td>
+{#                    <a href="/heart_edit/{{heart.heart_id}}" type="button" class="btn btn-warning" data-person_login="{{heart.heart_id}}">Edit</a>#}
+{#                    <a href="/delete_heart/{{heart.heart_id}}" type="button" class="btn btn-warning" data-person_login="{{heart.heart_id}}">Delete</a>#}
+                    <a href="/heartdiagnostics/{{heart.heart_id}}" type="button" class="btn btn-warning" >diagnostic</a>
+                </td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td> <a href="/create_heart" type="button" class="btn btn-warning">New Heart</a> </td>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+
+{% endblock %}

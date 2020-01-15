@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">symptom description</th>
+                <th scope="col">disease id</th>
+                <th scope="col">disease name</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for symptom in diseases %}
+            <tr >
+                <td> {{symptom.description}} </td>
+                <td> {{symptom.disease_id}} </td>
+                <td> {{symptom.disease_name}} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ </div>
+
+
+{% endblock %}
